@@ -1,339 +1,152 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Zclassic: Cryptocurrency">
-    <title>Zclassic: Cryptocurrency</title>
-
-    <link rel="canonical" href="https://zclassic.org">
-
-  <link rel="icon" href="zclassic.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="zclassic.ico" type="image/x-icon">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zclassic — Be your own full node</title>
+  <meta name="description" content="Zclassic (ZCL): a fair-launch, proof-of-work cryptocurrency with zk-SNARK shielded payments since 2016. Run your own full node with Zclassic or Z23.">
+  <link rel="canonical" href="https://zclassic.org/">
   <link rel="icon" href="zclassic.png" type="image/png">
+  <link rel="icon" href="zclassic.ico" type="image/x-icon">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="Zclassic — Be your own full node">
+  <meta property="og:description" content="Fair launch. Private payments. Proof-of-work since 2016.">
+  <meta property="og:image" content="https://zclassic.org/zclassic.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-	  
-<link href="bootstrap.min.css" rel="stylesheet">
+<header class="wrap bar">
+  <a class="brand" href="/"><img src="zclassic.png" width="28" height="28" alt="">Zclassic</a>
+  <nav>
+    <a href="#download">Download</a>
+    <a href="#z23">Z23</a>
+    <a href="#specs">Specs</a>
+    <a href="#resources">Resources</a>
+  </nav>
+</header>
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
+<main>
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-    </style>
-    
-    <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
-  </head>
-  <body>
-    
-<div class="col-lg-8 mx-auto p-4 py-md-5">
-  <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
-    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-	<img src="zclassic.png" width="40" height="40" style="margin-right: 15px;">
-
-	<title>Zclassic: Cryptocurrency</title>
-      <span class="fs-4">Zclassic: Cryptocurrency</span>
-    </a>
-  </header>
-
-  <main>
-
-    <!-- NEW MISSION STATEMENT HIGHLIGHT END -->
-
-    <h1>Be Your Own <b>FULL NODE</b></h1>
-    <p class="fs-5 col-md-8">
-	ZK-SNARKs Fully Shielded Private Transactions 
-    </p>
-
-		About Zclassic (ZCL) <br>
-		<span style="font-size:70%;">
-	  
-Zclassic is a fair-launch, community-driven cryptocurrency founded in 2016 as a fork of Zcash to remove founder rewards, taxes, and restrictive licensing. Every block reward goes entirely to miners, ensuring an equitable, transparent network built on open-source principles. Governed by its users and secured through proof-of-work, Zclassic maintains a lean, resilient blockchain optimized for global accessibility. Operating under a permissive MIT-style license, the project empowers independent development and experimentation while preserving the integrity of its core chain through “opto-isolation,” a design that allows forks and innovations to thrive without risk to the main network. Its mission remains simple and enduring: a secure, decentralized, and truly fair digital currency for all.
-		</span>			
-
-
-    <div class="mb-5">
-      <a style="margin-top: 15px;" id="getWallet" href="https://github.com/ZclassicCommunity/zclassic/releases/download/v2.1.2-beta6/zclwallet-v2.1.2-beta6-win64.exe" class="btn btn-success btn-lg px-4">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-windows" viewBox="0 0 16 16">
-          <path d="M6.555 1.375 0 2.237v5.45h6.555V1.375zM0 13.795l6.555.933V8.313H0v5.482zm7.278-5.4.026 6.378L16 16V8.395H7.278zM16 0 7.33 1.244v6.414H16V0z"/>
-        </svg>
-	Windows GUI Wallet
-      </a>
-
-      <a style="margin-top: 15px;" id="getWallet" href="https://github.com/ZclassicCommunity/zclassic/releases/download/v2.1.1.60/zclassic-gui-linux-ubuntu-22.04-x86_64-2-1-1-60.tar.gz" class="btn btn-primary btn-lg px-4">
-      	Linux GUI Wallet (Ubuntu 22.04)
-      </a>
-
-      <a style="margin-top: 15px;" id="getWallet" href="https://github.com/ZclassicCommunity/zclassic/releases/download/v2.1.1.60/zclassic-linux-ubuntu-22.04-x86_64-2-1-1-60.tar.gz" class="btn btn-primary btn-lg px-4">
-      	Linux CLI Wallet (Ubuntu 22.04)
-      </a>
-	
-	    
+  <section class="wrap hero">
+    <p class="eyebrow">ZCL · since November 6, 2016</p>
+    <h1>Be your own<br><span>full node.</span></h1>
+    <p class="lede">Zclassic is a fair-launch, proof-of-work cryptocurrency with zk-SNARK shielded payments. No founders' reward, no tax, no permission needed: every block reward goes to the miner who found it.</p>
+    <div class="actions">
+      <a class="btn primary" href="#download">Get a wallet</a>
+      <a class="btn" href="#z23">Meet Z23</a>
     </div>
-    <p>
-	(see all <a href="https://github.com/ZclassicCommunity/zclassic/releases/tag/v2.1.1.60">Latest releases on GitHub</a>)
-    </p>
-	  
-    <p>
-      <b>Tip!</b> 
-      To use the GUI FULL NODE, first run the zclassicd to <b>fully synchronize a blockchain in an hour!</b>
-    </p>
+  </section>
 
-    <p>
-      <b>Specs:</b> <br>
-      Max Supply: 11&nbsp;462&nbsp;487&nbsp;ZCL <br>
-      Total Mined: <a href="https://stats.zclnet.net/coingecko">Click here to see current total supply </a> (10&nbsp;341&nbsp;982&nbsp;ZCL as of 2025-10-19) <br>
-      100% PoW Equihash Mining Since <a href="https://bitcointalk.org/index.php?topic=1671982.0">
-
-      Nov 6, 2016 </a><br>
-
-    </p>
-
-
-    <div class="mb-5" id="add8ball" style="display: none;">
-      <a href="#" id="myLink" class="btn btn-primary btn-lg px-4">
-Add
-8ball
-to Keplr
-</a>
-</div>
-
-
-
-
-    <hr class="col-12 col-md-122 mb-12">
-
-    <div class="row g-5">
-      <div class="col-md-6">
-        <h2>Resources</h2>
-	<div class="text-truncate">
-	  Block Explorer
-	</div>
-
-
-        <ul class="icon-list ps-0">
-          <li class="d-flex align-items-start mb-1">
-	  <a href="https://explorer.zcl.zelcore.io/">
-      https://explorer.zcl.zelcore.io/
-	  </a>
-          </li>
-
-<br>
-	<div class="text-truncate">
-	  Mobile Wallets     <b>(iOS, Android, PC, Mac, Linux)</b>
-
-	</div>
-
-	<ul class="icon-list ps-0">
-
-	  <li class="d-flex align-items-start mb-1">
-	  <a href="https://zelcore.io/">
-      https://zelcore.io/
-	  </a>
-
-  </li>
-
-
-	  <li class="d-flex align-items-start mb-1">
-	  <a href="https://www.coinomi.com/">
-      https://www.coinomi.com/
-	  </a>
-          </li>
-	  
-	  </ul>
-
-    <br>
-    <div class="text-truncate">
-      Electrum-Zclassic Light-Wallet
+  <section class="wrap grid three pillars">
+    <div>
+      <h3>Private by choice</h3>
+      <p>Shielded addresses hide sender, receiver and amount with zero-knowledge proofs. Transparent addresses work when you want them to.</p>
     </div>
-  
-    <ul class="icon-list ps-0">
-  
-      <li class="d-flex align-items-start mb-1">
-      <a href="https://github.com/ZclassicCommunity/electrum-zclassic/releases/download/v3.2.6/electrum-zclassic-v3.2.6-setup-win64.exe">
-        Windows Download
+    <div>
+      <h3>Fair from block one</h3>
+      <p>A 2016 fork of Zcash that removed the founders' reward. 100% of issuance is mined with Equihash proof-of-work.</p>
+    </div>
+    <div>
+      <h3>Owned by its users</h3>
+      <p>Community governed and permissively licensed. Anyone can build on it, fork it or run it. Nobody has to ask.</p>
+    </div>
+  </section>
+
+  <section id="download" class="wrap">
+    <h2>Download</h2>
+    <p class="muted">Zclassic v2.1.2-beta6 — a single-file wallet with the full node built in.</p>
+    <div class="grid three cards">
+      <a class="card" href="https://github.com/ZclassicCommunity/zclassic/releases/download/v2.1.2-beta6/zclwallet-v2.1.2-beta6-win64.exe">
+        <strong>Windows</strong><span>zclwallet · 64-bit</span>
       </a>
-            </li>
-  
-  
-            <li class="d-flex align-items-start mb-1">
-              <a href="https://github.com/ZclassicCommunity/electrum-zclassic/releases/download/v3.2.6/electrum-zclassic-v3.2.6-macosx.dmg">
-                Mac Download
-              </a>
-                    </li>
-              
-      </ul>
-  
-
-
-      </div>
-
-      <div class="col-md-6">
-        <h2>External</h2>
-        
-        <ul class="icon-list ps-0">
-          <li class="d-flex align-items-start mb-1">
-            <a href="https://www.coingecko.com/en/coins/zclassic">
-              CoinGecko Listing
-            </a>
-          </li>
-          <li class="d-flex align-items-start mb-1">
-            <a href="https://coinmarketcap.com/currencies/zclassic/">
-              CoinMarketCap Listing
-            </a>
-          </li>
-
-
-          <li class="d-flex align-items-start mb-1">
-            <a href="https://www.forbes.com/digital-assets/assets/zclassic-zcl/">
-              Forbes Digital Assets (Zclassic-ZCL)
-            </a>
-          </li>
-
-          <li class="d-flex align-items-start mb-1">
-            <a href="https://www.bloomberg.com/news/articles/2018-02-22/when-you-come-to-a-fork-in-the-crypto-take-it-fundstrat-says#xj4y7vzkg">
-              Bloomberg
-            </a>
-          </li>
-
-          <li class="d-flex align-items-start mb-1">
-            <a href="https://www.investing.com/news/cryptocurrency-news/anon-fork-for-bitcoin-btc-zclassic-zcl-scheduled-for-september-10-1596448">
-              investing.com
-            </a>
-          </li>          
-          </ul>
-
-      </div>
-
-      <div class="col-md-6">
-        <h2>Exchanges</h2>
-        
-        <ul class="icon-list ps-0">
-          <li class="d-flex align-items-start mb-1">
-            <a href="https://nonkyc.io/market/ZCL_USDT">
-				https://nonkyc.io/market/ZCL_USDT			
-			</a>
-          </li>
-
-          <li class="d-flex align-items-start mb-1">
-            <a href="https://safe.trade/">
-              https://safe.trade/
-            </a>
-          </li>
-
-          <li class="d-flex align-items-start mb-1">
-            <a href="https://www.nofinex.com/market/pair/ZCL-BTC.html">
-				https://www.nofinex.com/market/pair/ZCL-BTC.html
-            </a>
-          </li>
-			
-			
-        </ul>
-
-      </div>
-
-
-      <div class="col-md-6">
-        <h2>Links</h2>
-        
-        <ul class="icon-list ps-0">
-
-          <li class="d-flex align-items-start mb-1">
-            <a href="https://github.com/ZclassicCommunity/zclassic/">
-              https://github.com/ZclassicCommunity/zclassic/
-            </a>
-          </li>
-
-          <li class="d-flex align-items-start mb-1">
-            <a href="https://t.me/zclassic_chat">
-              Telegram Chat
-            </a>
-          </li>
-
-          <li class="d-flex align-items-start mb-1">
-            <a href="https://github.com/zcash/zips/raw/a8adb58654e086df352bde5f3b5e20110d43e91c/protocol/protocol.pdf">
-              Protocol Document
-            </a>
-          </li>
-
-
-          </ul>
-
-      </div>
-
-
-
+      <a class="card" href="https://github.com/ZclassicCommunity/zclassic/releases/download/v2.1.2-beta6/zclwallet-v2.1.2-beta6-macos-arm64.dmg">
+        <strong>macOS</strong><span>zclwallet · Apple silicon</span>
+      </a>
+      <a class="card" href="https://github.com/ZclassicCommunity/zclassic/releases/download/v2.1.2-beta6/zclwallet-v2.1.2-beta6-linux-x86_64">
+        <strong>Linux</strong><span>zclwallet · x86_64</span>
+      </a>
     </div>
-    <!-- NEW MISSION STATEMENT HIGHLIGHT START -->
-    <div style="background-color: #ffd166; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
-      <p>
-        We invite you to read our mission statement drafted 2025:
-        <strong>
-          <a href="https://zclassic.org/zclassic-mission-2025.pdf" target="_blank" rel="noopener noreferrer">
-            zclassic.org/zclassic-mission-2025.pdf
-          </a>
-        </strong>
-      </p>
+    <p class="small">Command-line node (<code>zclassicd</code>):
+      <a href="https://github.com/ZclassicCommunity/zclassic/releases/download/v2.1.2-beta6/zclassicd-v2.1.2-beta6-linux-x86_64.tar.gz">Linux</a> ·
+      <a href="https://github.com/ZclassicCommunity/zclassic/releases/download/v2.1.2-beta6/zclassicd-v2.1.2-beta6-macos-arm64.tar.gz">macOS</a> ·
+      <a href="https://github.com/ZclassicCommunity/zclassic/releases/download/v2.1.2-beta6/zclassicd-v2.1.2-beta6-win64.zip">Windows</a> ·
+      <a href="https://github.com/ZclassicCommunity/zclassic/releases/download/v2.1.2-beta6/SHA256SUMS.txt">SHA256SUMS</a> ·
+      <a href="https://github.com/ZclassicCommunity/zclassic/releases">all releases</a>
+    </p>
+  </section>
+
+  <section id="z23" class="wrap feature">
+    <p class="eyebrow">New · open source</p>
+    <h2>Z23: the Zclassic full node in one C23 program.</h2>
+    <p class="lede">Z23 is an independent, from-source ZClassic node written in C23. It downloads the chain from peers and checks every block itself: proof-of-work, scripts and the zero-knowledge proofs behind shielded payments.</p>
+    <ul class="checks">
+      <li><strong>Verifies everything locally.</strong> Shielded proof verification is native C23, with the verifying keys compiled in. No Rust, and no proving parameters needed to sync.</li>
+      <li><strong>Tor built in.</strong> Tor is bundled, on by default, and the node publishes its own <code>.onion</code>. It trusts no DNS seeder and no certificate authority.</li>
+      <li><strong>Its own block explorer.</strong> The node serves an explorer and a JSON API itself, with no reverse proxy or hosted service in front.</li>
+      <li><strong>Wallet and RPC.</strong> Transparent and shielded wallet state, and an RPC interface for your own tools.</li>
+      <li><strong>Built to recover.</strong> A fresh node starts honestly empty and reports why when it can't make progress. It is designed to survive <code>kill -9</code>.</li>
+      <li><strong>Answers to you.</strong> One executable you build and run on your own machine. Its optional software commons keeps code only when you accept that exact version.</li>
+    </ul>
+<pre><code>git clone https://github.com/z23c/z23.git
+cd z23 &amp;&amp; make setup &amp;&amp; make -j z23
+build/bin/z23</code></pre>
+    <p class="small">Status: pre-v1, under active development and measured against eight public acceptance criteria, including consensus parity with <code>zclassicd</code>. <a href="https://github.com/z23c/z23">github.com/z23c/z23</a></p>
+  </section>
+
+  <section id="specs" class="wrap">
+    <h2>Specs</h2>
+    <dl class="specs">
+      <div><dt>Ticker</dt><dd>ZCL</dd></div>
+      <div><dt>Launched</dt><dd><a href="https://bitcointalk.org/index.php?topic=1671982.0">November 6, 2016</a></dd></div>
+      <div><dt>Consensus</dt><dd>Proof-of-work, Equihash</dd></div>
+      <div><dt>Privacy</dt><dd>zk-SNARK shielded (Sapling)</dd></div>
+      <div><dt>Maximum supply</dt><dd>11,462,488 ZCL</dd></div>
+      <div><dt>Mined so far</dt><dd>≈10.49 million (Sep 2026)</dd></div>
+      <div><dt>Block reward</dt><dd>0.390625 ZCL, all to miners</dd></div>
+      <div><dt>Next halving</dt><dd>Block 4,067,001</dd></div>
+    </dl>
+  </section>
+
+  <section id="resources" class="wrap grid four links">
+    <div>
+      <h3>Explore</h3>
+      <a href="https://explorer.zcl.zelcore.io/">Block explorer</a>
+      <a href="https://github.com/ZclassicCommunity/zclassic">Zclassic source</a>
+      <a href="https://github.com/z23c/z23">Z23 source</a>
+      <a href="https://github.com/zcash/zips/raw/a8adb58654e086df352bde5f3b5e20110d43e91c/protocol/protocol.pdf">Protocol spec</a>
     </div>
+    <div>
+      <h3>Wallets</h3>
+      <a href="https://zelcore.io/">Zelcore</a>
+      <a href="https://www.coinomi.com/">Coinomi</a>
+      <a href="https://github.com/ZclassicCommunity/electrum-zclassic/releases/download/v3.2.6/electrum-zclassic-v3.2.6-setup-win64.exe">Electrum-Zclassic (Windows)</a>
+      <a href="https://github.com/ZclassicCommunity/electrum-zclassic/releases/download/v3.2.6/electrum-zclassic-v3.2.6-macosx.dmg">Electrum-Zclassic (macOS)</a>
+    </div>
+    <div>
+      <h3>Markets</h3>
+      <a href="https://nonkyc.io/market/ZCL_USDT">NonKYC</a>
+      <a href="https://safe.trade/">SafeTrade</a>
+      <a href="https://www.nofinex.com/market/pair/ZCL-BTC.html">Nofinex</a>
+      <a href="https://www.coingecko.com/en/coins/zclassic">CoinGecko</a>
+      <a href="https://coinmarketcap.com/currencies/zclassic/">CoinMarketCap</a>
+    </div>
+    <div>
+      <h3>Community</h3>
+      <a href="https://t.me/zclassic_chat">Telegram</a>
+      <a href="zclassic-mission-2025.pdf">Mission &amp; vision (2025)</a>
+      <a href="zclassic.pdf">Zclassic paper</a>
+      <a href="https://www.forbes.com/digital-assets/assets/zclassic-zcl/">Forbes</a>
+      <a href="https://www.bloomberg.com/news/articles/2018-02-22/when-you-come-to-a-fork-in-the-crypto-take-it-fundstrat-says">Bloomberg</a>
+    </div>
+  </section>
 
-	  
-  </main>
-  <footer class="pt-5 my-5 text-muted border-top">
-	<img src="zclassic.png" width="40" height="40" style="margin-right: 8px;">
+</main>
 
-    Zclassic 
-<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain</a> No Copyright
-<img style="margin-left: 8px;" src="cc0.png"> "No Rights Reserved" 2016-2025
-  </footer>
-</div>
+<footer class="wrap foot">
+  <img src="cc0.png" alt="CC0" height="15">
+  <span>Zclassic · <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 public domain</a> · No rights reserved · 2016–2026</span>
+</footer>
 
-      
-  </body>
+</body>
 </html>
