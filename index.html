@@ -1,15 +1,17 @@
 <!doctype html>
-<!-- Zclassic community website. Static HTML and CSS, no build step or external UI dependencies.
-     Content and resource destinations reviewed against zclassic.org on 4 October 2026.
-     Website content: CC0. Embedded fonts: Manrope and Space Grotesk, SIL Open Font License. -->
+<!-- Zclassic community website. Static frontend with native fonts and no external UI dependencies. -->
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Zclassic: private payments, fair mining rewards, and a blockchain owned by its community. Get a wallet, run a node, and make it yours.">
+  <meta name="description" content="Zclassic (ZCL): a fair-launch, proof-of-work cryptocurrency with zk-SNARK shielded payments since 2016. Run your own full node with Zclassic or Z23.">
   <meta name="theme-color" content="#faf9f6">
   <meta name="color-scheme" content="light dark">
-  <title>Zclassic — Your money. Your privacy. Your rules.</title>
+  <link rel="canonical" href="https://zclassic.org/">
+  <meta property="og:title" content="Zclassic — Be your own full node">
+  <meta property="og:description" content="Fair launch. Private payments. Proof-of-work since 2016.">
+  <meta property="og:image" content="https://zclassic.org/zclassic.png">
+  <title>Zclassic — Be your own full node</title>
   <link rel="icon" type="image/png" href="./frontend-zcl/favicon-96x96.png" sizes="96x96">
   <link rel="icon" type="image/svg+xml" href="./frontend-zcl/favicon.svg">
   <link rel="shortcut icon" href="./frontend-zcl/favicon.ico">
@@ -102,13 +104,13 @@
             <ellipse cx="310" cy="271" rx="124" ry="152" stroke="#8e411e" stroke-opacity=".6" stroke-width="1"/>
             <ellipse cx="310" cy="271" rx="121" ry="149" stroke="#ffd4a3" stroke-opacity=".5" stroke-width="1"/>
             <ellipse cx="310" cy="271" rx="103" ry="126" fill="url(#coin-inner)" stroke="#8e411e" stroke-opacity=".35"/>
-            <text fill="#713819" font-family="Manrope,sans-serif" font-size="8.2" font-weight="700" letter-spacing="2.5"><textPath href="#coin-text-path" startOffset="13%">ZCLASSIC · YOUR RULES</textPath></text>
+            <text fill="#713819" font-family="system-ui,sans-serif" font-size="8.2" font-weight="700" letter-spacing="2.5"><textPath href="#coin-text-path" startOffset="13%">ZCLASSIC · YOUR RULES</textPath></text>
             <g filter="url(#coin-logo-emboss)"><rect x="230" y="191" width="156" height="156" fill="url(#z-face)" mask="url(#coin-logo-mask)"/></g>
-            <text x="308" y="385" text-anchor="middle" fill="#f9c18e" font-family="Space Grotesk,sans-serif" font-size="9" letter-spacing="4">EST. 2016</text>
+            <text x="308" y="385" text-anchor="middle" fill="#f9c18e" font-family="system-ui,sans-serif" font-size="9" letter-spacing="4">EST. 2016</text>
           </g></g>
           <path d="M56 334c43 65 173 83 301 50 116-30 197-103 201-161" stroke="#b96a34" stroke-opacity=".45" stroke-width="1.1"/>
           <circle cx="104" cy="372" r="5" fill="url(#node-fill)"/><circle cx="386" cy="376" r="4" fill="url(#node-fill)"/>
-          <g fill="currentColor" opacity=".35" font-family="Manrope,sans-serif" font-size="7" letter-spacing="1.2"><text x="53" y="247">P2P</text><text x="460" y="438">ZCL</text><text x="165" y="75">PROOF OF WORK</text></g>
+          <g fill="currentColor" opacity=".35" font-family="system-ui,sans-serif" font-size="7" letter-spacing="1.2"><text x="53" y="247">P2P</text><text x="460" y="438">ZCL</text><text x="165" y="75">PROOF OF WORK</text></g>
         </svg>
         <div class="art-label privacy-label"><div class="label-icon"><svg class="icon"><use href="#i-shield"/></svg></div><div><strong>Private by choice.</strong><small>Powered by zk-SNARKs</small></div></div>
         <div class="art-label rewards-label"><span class="reward-number">100%</span><div><strong>To the miners.</strong><small>Every block. From day one.</small></div></div>
@@ -129,7 +131,7 @@
           <h3>Private by choice.</h3><p>Shielded payments keep the sender, receiver, and amount private using zero-knowledge proofs. Choose transparent addresses when you want to.</p><a class="link-arrow" href="https://github.com/zcash/zips/raw/a8adb58654e086df352bde5f3b5e20110d43e91c/protocol/protocol.pdf" target="_blank" rel="noopener noreferrer">Explore the technology<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </article>
         <article class="principle reveal"><span class="card-number">02</span>
-          <div class="principle-art"><svg viewBox="0 0 180 125" fill="none" aria-hidden="true"><path d="M25 102h133" class="graphic-line"/><path d="M35 27v75m37-75v75m37-75v75m37-75v75" class="graphic-line" stroke-dasharray="2 5"/><rect x="34" y="77" width="23" height="25" rx="3" class="graphic-soft"/><rect x="64" y="60" width="23" height="42" rx="3" fill="var(--bright)" opacity=".3"/><rect x="94" y="43" width="23" height="59" rx="3" fill="var(--bright)" opacity=".6"/><rect x="124" y="26" width="23" height="76" rx="3" fill="var(--bright)"/><path d="m36 51 79-33m-12-2 12 2-6 10" stroke="var(--accent)" stroke-width="1.5"/><rect x="16" y="10" width="60" height="23" rx="6" fill="var(--surface)" stroke="var(--line)"/><text x="46" y="25" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="9" class="graphic-ink">100% MINED</text></svg></div>
+          <div class="principle-art"><svg viewBox="0 0 180 125" fill="none" aria-hidden="true"><path d="M25 102h133" class="graphic-line"/><path d="M35 27v75m37-75v75m37-75v75m37-75v75" class="graphic-line" stroke-dasharray="2 5"/><rect x="34" y="77" width="23" height="25" rx="3" class="graphic-soft"/><rect x="64" y="60" width="23" height="42" rx="3" fill="var(--bright)" opacity=".3"/><rect x="94" y="43" width="23" height="59" rx="3" fill="var(--bright)" opacity=".6"/><rect x="124" y="26" width="23" height="76" rx="3" fill="var(--bright)"/><path d="m36 51 79-33m-12-2 12 2-6 10" stroke="var(--accent)" stroke-width="1.5"/><rect x="16" y="10" width="60" height="23" rx="6" fill="var(--surface)" stroke="var(--line)"/><text x="46" y="25" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" class="graphic-ink">100% MINED</text></svg></div>
           <h3>Fair from block one.</h3><p>Launched in 2016 as a fork of Zcash, without the founders’ reward. Every block reward goes to the miner who found it. No protocol tax.</p><a class="link-arrow" href="#specs">See the network specs<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </article>
         <article class="principle reveal"><span class="card-number">03</span>
@@ -167,19 +169,17 @@
       <div class="z23-main"><div><h2 class="z23-title" id="z23-title">One program.<br>Your entire node.<br><span>Meet Z23.</span></h2><p class="z23-intro">An independent Zclassic full node, written in C23. Download the chain from peers and verify every block yourself — including the proofs behind shielded payments.</p><a class="link-arrow z23-source" href="https://github.com/z23c/z23" target="_blank" rel="noopener noreferrer">Explore Z23 on GitHub<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
         <div><div class="terminal"><div class="terminal-bar"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="terminal-title">build-your-own.sh</span><button class="copy-btn" id="copy-code" aria-label="Copy Z23 setup commands"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span id="copy-label">Copy</span></button></div>
           <pre aria-label="Z23 setup commands" role="region" tabindex="0"><code id="setup-code"><span class="prompt" aria-hidden="true">$ </span>git clone <span class="code-url">https://github.com/z23c/z23.git</span>
-<span class="prompt" aria-hidden="true">$ </span>cd z23
-<span class="prompt" aria-hidden="true">$ </span>make doctor
-<span class="prompt" aria-hidden="true">$ </span>make setup &amp;&amp; make -j z23
+<span class="prompt" aria-hidden="true">$ </span>cd z23 &amp;&amp; make setup &amp;&amp; make -j z23
 <span class="prompt" aria-hidden="true">$ </span>build/bin/z23</code></pre>
-          <div class="terminal-caption"><span>Native C23</span><span>No Rust toolchain</span><span>Build from source</span></div></div><p class="terminal-prereq">Linux requires GCC 14+ or a C23-capable Clang, GNU Make, and a C++ compiler. <a href="https://github.com/z23c/z23" target="_blank" rel="noopener noreferrer" class="link-inline">Read the setup guide ↗</a></p></div>
+          <div class="terminal-caption"><span>Native C23</span><span>No Rust toolchain</span><span>Build from source</span></div></div><p class="terminal-prereq">Status: pre-v1, under active development and measured against eight public acceptance criteria, including consensus parity with <code>zclassicd</code>. <a href="https://github.com/z23c/z23">github.com/z23c/z23</a></p></div>
       </div>
       <div class="z23-capabilities">
-        <div class="capability"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><div><h3>Verify locally.</h3><p>Native shielded proof verification. No proving parameters needed to sync.</p></div></div>
-        <div class="capability"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><div><h3>Tor, built in.</h3><p>On by default, with your own .onion address. No DNS seeders.</p></div></div>
-        <div class="capability"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg><div><h3>Your own explorer.</h3><p>A block explorer and JSON API served directly by your node.</p></div></div>
-        <div class="capability"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg><div><h3>Wallet + RPC.</h3><p>Transparent and shielded wallet state, with an interface for your tools.</p></div></div>
-        <div class="capability"><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg><div><h3>Built to recover.</h3><p>Designed to survive hard stops and explain what holds up progress.</p></div></div>
-        <div class="capability"><svg class="icon" aria-hidden="true"><use href="#i-sliders"/></svg><div><h3>Answers to you.</h3><p>The optional software commons keeps only the exact versions you accept.</p></div></div>
+        <div class="capability"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><div><h3>Verify locally.</h3><p>Shielded proof verification is native C23, with the verifying keys compiled in. No Rust, and no proving parameters needed to sync.</p></div></div>
+        <div class="capability"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><div><h3>Tor, built in.</h3><p>Tor is bundled, on by default, and the node publishes its own <code>.onion</code>. It trusts no DNS seeder and no certificate authority.</p></div></div>
+        <div class="capability"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg><div><h3>Your own explorer.</h3><p>The node serves an explorer and a JSON API itself, with no reverse proxy or hosted service in front.</p></div></div>
+        <div class="capability"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg><div><h3>Wallet + RPC.</h3><p>Transparent and shielded wallet state, and an RPC interface for your own tools.</p></div></div>
+        <div class="capability"><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg><div><h3>Built to recover.</h3><p>A fresh node starts honestly empty and reports why when it can't make progress. It is designed to survive <code>kill -9</code>.</p></div></div>
+        <div class="capability"><svg class="icon" aria-hidden="true"><use href="#i-sliders"/></svg><div><h3>Answers to you.</h3><p>One executable you build and run on your own machine. Its optional software commons keeps code only when you accept that exact version.</p></div></div>
       </div>
     </div></section>
 
@@ -219,8 +219,8 @@
           <li><a href="https://coinmarketcap.com/currencies/zclassic/" target="_blank" rel="noopener noreferrer">CoinMarketCap<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
         </ul></div>
         <div class="resource-group" data-category="community"><h3>Community<span>04</span></h3><ul>
-          <li><a href="https://zclassic.org/zclassic-mission-2025.pdf" target="_blank" rel="noopener noreferrer">Mission &amp; vision<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-          <li><a href="https://zclassic.org/zclassic.pdf" target="_blank" rel="noopener noreferrer">Zclassic paper<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li><a href="./zclassic-mission-2025.pdf" target="_blank" rel="noopener noreferrer">Mission &amp; vision<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li><a href="./zclassic.pdf" target="_blank" rel="noopener noreferrer">Zclassic paper<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
           <li><a href="https://www.forbes.com/digital-assets/assets/zclassic-zcl/" target="_blank" rel="noopener noreferrer">Forbes<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
           <li><a href="https://www.bloomberg.com/news/articles/2018-02-22/when-you-come-to-a-fork-in-the-crypto-take-it-fundstrat-says" target="_blank" rel="noopener noreferrer">Bloomberg<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
         </ul></div>
@@ -230,7 +230,7 @@
     <section class="wrap community-banner reveal" aria-labelledby="community-title"><div><p class="eyebrow">By the community. For the community.</p><h2 id="community-title">Built by people.<br>Open to everyone.</h2></div><div><p>Write code. Run a node. Improve the docs.<br>Or just bring your perspective. There’s a place for you.</p><div class="community-actions"><a class="btn primary" href="https://t.me/zclassic_chat" target="_blank" rel="noopener noreferrer">Join the conversation<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="link-arrow" href="https://github.com/ZclassicCommunity/zclassic" target="_blank" rel="noopener noreferrer">Contribute on GitHub<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></section>
   </main>
 
-  <footer class="wrap footer"><div class="footer-top"><div><a class="brand" href="#top" aria-label="Zclassic home"><img src="./frontend-zcl/zclassic.svg" width="31" height="31" alt="">Zclassic<span class="period">.</span></a><p class="footer-tagline">Private by choice. Free by principle.</p></div><div class="footer-social"><a class="icon-btn" href="https://github.com/ZclassicCommunity/zclassic" target="_blank" rel="noopener noreferrer" aria-label="Zclassic on GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a><a class="icon-btn" href="https://t.me/zclassic_chat" target="_blank" rel="noopener noreferrer" aria-label="Zclassic on Telegram"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg></a><a class="back-top" href="#top">Back to top<svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></a></div></div><div class="footer-bottom"><p class="footer-legal"><span>Zclassic ·</span><a class="cc0-badge-link" href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="license noopener noreferrer" title="CC0 1.0 Universal"><img class="cc0-badge" src="./frontend-zcl/cc0.svg" alt="CC0 public domain" width="80" height="15"></a><span>· No rights reserved · 2016–2026</span></p><div class="license-links"><a href="https://zclassic.org/zclassic-mission-2025.pdf" target="_blank" rel="noopener noreferrer">Mission &amp; vision</a><a href="https://github.com/ZclassicCommunity/zclassic" target="_blank" rel="noopener noreferrer">Open source ↗</a></div></div></footer>
+  <footer class="wrap footer"><div class="footer-top"><div><a class="brand" href="#top" aria-label="Zclassic home"><img src="./frontend-zcl/zclassic.svg" width="31" height="31" alt="">Zclassic<span class="period">.</span></a><p class="footer-tagline">Private by choice. Free by principle.</p></div><div class="footer-social"><a class="icon-btn" href="https://github.com/ZclassicCommunity/zclassic" target="_blank" rel="noopener noreferrer" aria-label="Zclassic on GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a><a class="icon-btn" href="https://t.me/zclassic_chat" target="_blank" rel="noopener noreferrer" aria-label="Zclassic on Telegram"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg></a><a class="back-top" href="#top">Back to top<svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></a></div></div><div class="footer-bottom"><p class="footer-legal"><span>Zclassic ·</span><a class="cc0-badge-link" href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="license noopener noreferrer" title="CC0 1.0 Universal"><img class="cc0-badge" src="./frontend-zcl/cc0.svg" alt="CC0 public domain" width="80" height="15"></a><span>· No rights reserved · 2016–2026</span></p><div class="license-links"><a href="./zclassic-mission-2025.pdf" target="_blank" rel="noopener noreferrer">Mission &amp; vision</a><a href="https://github.com/ZclassicCommunity/zclassic" target="_blank" rel="noopener noreferrer">Open source ↗</a></div></div></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
@@ -313,7 +313,11 @@
       clearTimeout(toastTimer); element.textContent = message; element.classList.add('show');
       toastTimer = setTimeout(() => element.classList.remove('show'), 3500);
     };
-    const setupCommands = 'git clone https://github.com/z23c/z23.git\ncd z23\nmake doctor\nmake setup && make -j z23\nbuild/bin/z23';
+    const getSetupCommands = () => {
+      const code = document.getElementById('setup-code').cloneNode(true);
+      code.querySelectorAll('.prompt').forEach(prompt => prompt.remove());
+      return code.textContent.trim();
+    };
     const legacyCopy = text => {
       const field = document.createElement('textarea'); field.value = text; field.setAttribute('readonly','');
       field.style.cssText = 'position:fixed;left:0;top:0;opacity:0;pointer-events:none';
@@ -322,6 +326,7 @@
       field.remove(); previousFocus?.focus(); return copied;
     };
     document.getElementById('copy-code').addEventListener('click', async () => {
+      const setupCommands = getSetupCommands();
       let copied = false;
       try { if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(setupCommands); copied = true; } } catch (_) {}
       if (!copied) copied = legacyCopy(setupCommands);

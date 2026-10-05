@@ -19,7 +19,7 @@ Keep `index.html` and `README.md` at the repository root. Put the frontend asset
 | --- | --- |
 | `index.html` | Page content, inline SVG illustrations, and JavaScript interactions |
 | `README.md` | Setup and contribution instructions |
-| `frontend-zcl/style.css` | All page styling, responsive rules, embedded fonts, and font license notices |
+| `frontend-zcl/style.css` | Page styling and responsive rules, using native system fonts |
 | `frontend-zcl/zclassic.svg` | Zclassic logo |
 | `frontend-zcl/cc0.svg` | Linked CC0 badge in the footer |
 | `frontend-zcl/favicon.svg` | Scalable browser icon |
@@ -29,6 +29,7 @@ Keep `index.html` and `README.md` at the repository root. Put the frontend asset
 | `frontend-zcl/site.webmanifest` | App name, icon locations, and launch settings |
 | `frontend-zcl/web-app-manifest-192x192.png` | 192 × 192 app icon |
 | `frontend-zcl/web-app-manifest-512x512.png` | 512 × 512 app icon |
+| `tools/check_frontend.py` | Standard-library asset, size, and compatibility checks |
 
 Existing repository files, including `CNAME` and the linked PDF documents, should stay in place.
 
@@ -44,11 +45,25 @@ Open [http://localhost:8000/](http://localhost:8000/) in your browser. Stop the 
 
 You can also open `index.html` directly to preview the page. Use the local server when checking favicon and manifest behavior. Keep the `frontend-zcl` folder beside `index.html` in either case.
 
+## Checks
+
+Run the asset and performance checks before committing. The checker requires Python 3.9 or newer and has no external dependencies:
+
+```sh
+python3 tools/check_frontend.py
+```
+
+For a repository checkout, compare compatibility files and protected download destinations with the upstream baseline:
+
+```sh
+python3 tools/check_frontend.py --base ca4c11b672cdba8097ae13c2390e188e9f5c667b
+```
+
 ## Editing the website
 
 Edit page text, resource destinations, and JavaScript interactions in `index.html`. Edit colors, spacing, typography, breakpoints, and animations in `frontend-zcl/style.css`.
 
-The stylesheet contains embedded Manrope and Space Grotesk fonts, so the page does not need to download fonts from another service. Their complete license notices are preserved at the end of the stylesheet.
+The stylesheet uses native system fonts. No webfont files, embedded font payloads, or font service requests are shipped.
 
 Telegram and the main Zclassic repository link are available through the footer icons. Their duplicate entries have been removed from Resources. Links to specific tools, source repositories, and wallet downloads remain available where relevant.
 
@@ -73,18 +88,18 @@ When regenerating favicons, replace the seven generated favicon files in `fronte
 ## Contributing through GitHub
 
 1. Fork [ZclassicCommunity/zclassicorg.github.io](https://github.com/ZclassicCommunity/zclassicorg.github.io) and create a branch for your changes.
-2. Upload the updated `index.html`, this `README.md`, and the complete `frontend-zcl/` folder at the repository root. Upload the files and folder, rather than the ZIP itself.
+2. Upload the updated `index.html`, this `README.md`, the complete `frontend-zcl/` folder, and `tools/check_frontend.py` at the repository root. Upload the files and folders, rather than the ZIP itself.
 3. Keep the repository's existing domain configuration and documents. Commit the new asset paths and their files together.
 4. Preview the homepage on mobile and desktop, check both themes, and confirm that all frontend assets load.
 5. Open a pull request against the community repository's `main` branch. Maintainers can review and publish the change through the repository's existing hosting setup.
 
-This homepage uses `frontend-zcl/style.css`. The old root-level `style.css` and `zclassic.png` are not referenced by this version. Root-level copies of `zclassic.svg` and `cc0.svg` are also replaced by the copies inside `frontend-zcl/`.
+This homepage uses `frontend-zcl/style.css`. Keep the original root-level `style.css`, `zclassic.png`, `zclassic.ico`, and `cc0.png` unchanged for existing links and consumers. The page uses the new SVG logo and CC0 badge in `frontend-zcl/` without deleting these compatibility assets.
 
 ## Notices
 
 The homepage's [CC0 public domain notice](https://creativecommons.org/publicdomain/zero/1.0/) is preserved. The CC0 badge comes from the [official Creative Commons downloads](https://creativecommons.org/mission/downloads/).
 
-Manrope and Space Grotesk font software retain their SIL Open Font License 1.1 notices in `frontend-zcl/style.css`. Keep those notices with the embedded fonts.
+The repository’s existing MIT `LICENSE`, including its original copyright year, is unchanged. The previous webfont payloads and their accompanying notices have been removed together because the page now uses system fonts.
 
 ## References
 
