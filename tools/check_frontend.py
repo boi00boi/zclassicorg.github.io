@@ -24,6 +24,7 @@ class Page(HTMLParser):
         self.refs = []
         self.downloads = set()
         self.css = []
+        self.scripts = []
         self.errors = []
 
     def handle_starttag(self, tag, attrs):
@@ -44,6 +45,8 @@ class Page(HTMLParser):
                     self.errors.append("New-tab link lacks noopener/noreferrer: " + href)
         if tag == "script" and attrs.get("src") and urlsplit(attrs["src"]).netloc:
             self.errors.append("Third-party runtime script: " + attrs["src"])
+        elif tag == "script" and attrs.get("src"):
+            self.scripts.append(attrs["src"])
 
 
 class Text(HTMLParser):
@@ -111,18 +114,27 @@ def main():
     if len(manifest.get("icons", [])) != 2:
         errors.append("Expected the generated 192px and 512px manifest icons")
 
-    css_bytes = b""
+    frontend_files = {root / "index.html"}
+    script_text = ""
     for url in page.css:
         file = root / url.lstrip("/")
         if file.is_file():
             data = file.read_bytes()
-            css_bytes += data
+            frontend_files.add(file)
             if b"data:font" in data or b"@font-face" in data:
                 errors.append("Unexpected embedded/webfont payload in " + str(file.relative_to(root)))
-    weight = len(gzip.compress(html.encode(), mtime=0)) + len(gzip.compress(css_bytes, mtime=0))
+    for url in page.scripts:
+        file = root / url.lstrip("/")
+        if file.is_file():
+            frontend_files.add(file)
+            script_text += file.read_text() + "\n"
+    weight = sum(len(gzip.compress(file.read_bytes(), mtime=0)) for file in frontend_files)
     budget = 22 * 1024
     if weight > budget:
-        errors.append(f"HTML + CSS gzip size {weight} exceeds {budget}-byte budget")
+        errors.append(f"HTML + CSS + JavaScript gzip size {weight} exceeds {budget}-byte budget")
+
+    if (root / "REVIEW_REPORT.md").exists():
+        errors.append("Review reports do not belong in the published website")
 
     for name in ("style.css", "zclassic.png", "zclassic.ico", "cc0.png", "LICENSE"):
         if not (root / name).is_file():
@@ -132,15 +144,16 @@ def main():
         def original(name):
             return subprocess.check_output(["git", "-C", str(root), "show", args.base + ":" + name])
 
-        for name in ("style.css", "zclassic.png", "zclassic.ico", "cc0.png", "LICENSE"):
+        for name in ("style.css", "zclassic.png", "zclassic.ico", "cc0.png", "LICENSE", "CNAME",
+                     "zclassic-mission-2025.pdf", "zclassic.pdf", "zclassic-whitepaper.pdf"):
             if not (root / name).is_file() or (root / name).read_bytes() != original(name):
                 errors.append("Compatibility/licence file differs from upstream: " + name)
         upstream = original("index.html").decode()
         baseline = Page()
         baseline.feed(upstream)
-        release = re.search(r"const releaseBase = '([^']+)';", html)
+        release = re.search(r"const releaseBase\s*=\s*'([^']+)';", html + script_text)
         if release:
-            page.downloads.update(release[1] + f for f in re.findall(r"file:'([^']+)'", html))
+            page.downloads.update(release[1] + f for f in re.findall(r"file:\s*'([^']+)'", html + script_text))
         if page.downloads != baseline.downloads:
             errors.append("Release download URLs differ from upstream")
         if setup_commands(html) != setup_commands(upstream):
@@ -153,7 +166,7 @@ def main():
         for error in errors:
             print("FAIL:", error, file=sys.stderr)
         return 1
-    print(f"PASS: assets, fragments, manifest at root/subpath, and {weight:,}-byte HTML+CSS gzip budget")
+    print(f"PASS: assets, fragments, manifest at root/subpath, and {weight:,}-byte HTML+CSS+JS gzip budget")
     if args.base:
         print("PASS: upstream compatibility assets, LICENSE, download URLs, Z23 commands, and sharing metadata")
     return 0

@@ -5,10 +5,11 @@ A responsive community frontend for [zclassic.org](https://zclassic.org/), built
 ## Features
 
 - Responsive layouts for mobile, tablet, and desktop.
-- Light and dark themes, with the selected theme saved locally.
+- Light and dark themes that follow the system until a preference is saved, with changes shared across open tabs.
 - A scalable copper SVG logo used in the header, footer, and hero coin.
 - Wallet platform tabs, resource search and category filters, and a copyable Z23 command.
-- Accessible navigation, reduced motion support, and usable content with JavaScript disabled.
+- Keyboard navigation with focus recovery at mobile breakpoints, 44px controls, and reduced motion support.
+- Content and wallet links remain available when JavaScript is disabled or the enhancement script fails to load.
 - PNG, SVG, ICO, Apple touch, and web manifest icons generated with [RealFaviconGenerator](https://realfavicongenerator.net/).
 
 ## Repository layout
@@ -17,9 +18,10 @@ Keep `index.html` and `README.md` at the repository root. Put the frontend asset
 
 | Path | Purpose |
 | --- | --- |
-| `index.html` | Page content, inline SVG illustrations, and JavaScript interactions |
+| `index.html` | Page content, inline SVG illustrations, and a small theme bootstrap |
 | `README.md` | Setup and contribution instructions |
 | `frontend-zcl/style.css` | Page styling and responsive rules, using native system fonts |
+| `frontend-zcl/app.js` | Deferred navigation, theme, wallet, search, and clipboard enhancements |
 | `frontend-zcl/zclassic.svg` | Zclassic logo |
 | `frontend-zcl/cc0.svg` | Linked CC0 badge in the footer |
 | `frontend-zcl/favicon.svg` | Scalable browser icon |
@@ -30,6 +32,8 @@ Keep `index.html` and `README.md` at the repository root. Put the frontend asset
 | `frontend-zcl/web-app-manifest-192x192.png` | 192 × 192 app icon |
 | `frontend-zcl/web-app-manifest-512x512.png` | 512 × 512 app icon |
 | `tools/check_frontend.py` | Standard-library asset, size, and compatibility checks |
+| `tools/browser-check.cjs` | Optional Chromium, Firefox, and WebKit interaction and accessibility checks |
+| `package.json`, `package-lock.json` | Pinned development tools; not needed to serve the website |
 
 Existing repository files, including `CNAME` and the linked PDF documents, should stay in place.
 
@@ -47,7 +51,7 @@ You can also open `index.html` directly to preview the page. Use the local serve
 
 ## Checks
 
-Run the asset and performance checks before committing. The checker requires Python 3.9 or newer and has no external dependencies:
+Run the asset and size checks before committing. The checker requires Python 3.9 or newer and has no external dependencies. Its 22 KiB gzip budget includes HTML, CSS, and JavaScript:
 
 ```sh
 python3 tools/check_frontend.py
@@ -59,9 +63,21 @@ For a repository checkout, compare compatibility files and protected download de
 python3 tools/check_frontend.py --base ca4c11b672cdba8097ae13c2390e188e9f5c667b
 ```
 
+Optional browser checks use Node 22 or newer and the pinned development dependencies:
+
+```sh
+npm ci
+npx playwright install --with-deps chromium firefox webkit
+npm run test:browser
+```
+
+The suite starts its own local server. It checks responsive widths, both themes, automated accessibility, keyboard focus, original wallet downloads, search, clipboard fallbacks, subdirectory hosting, direct-file previews, reduced motion, and unavailable JavaScript or storage. To check one installed browser, set `ZCL_BROWSERS=chromium`, `firefox`, or `webkit`.
+
+These tools are for development only. The static site needs no npm installation or build command. Keep generated reports and test output outside the published repository.
+
 ## Editing the website
 
-Edit page text, resource destinations, and JavaScript interactions in `index.html`. Edit colors, spacing, typography, breakpoints, and animations in `frontend-zcl/style.css`.
+Edit page text and resource destinations in `index.html`, interactions in `frontend-zcl/app.js`, and colors, spacing, typography, breakpoints, and animations in `frontend-zcl/style.css`.
 
 The stylesheet uses native system fonts. No webfont files, embedded font payloads, or font service requests are shipped.
 
@@ -88,7 +104,7 @@ When regenerating favicons, replace the seven generated favicon files in `fronte
 ## Contributing through GitHub
 
 1. Fork [ZclassicCommunity/zclassicorg.github.io](https://github.com/ZclassicCommunity/zclassicorg.github.io) and create a branch for your changes.
-2. Upload the updated `index.html`, this `README.md`, the complete `frontend-zcl/` folder, and `tools/check_frontend.py` at the repository root. Upload the files and folders, rather than the ZIP itself.
+2. Commit the updated `index.html`, this `README.md`, the complete `frontend-zcl/` folder, and any updated development tools together. Do not upload review reports or a ZIP to the published website.
 3. Keep the repository's existing domain configuration and documents. Commit the new asset paths and their files together.
 4. Preview the homepage on mobile and desktop, check both themes, and confirm that all frontend assets load.
 5. Open a pull request against the community repository's `main` branch. Maintainers can review and publish the change through the repository's existing hosting setup.
